@@ -1,0 +1,47 @@
+<div class="navbar navbar-inverse bg-inverse">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand">Movies</a>
+          <div class="row">
+                <div class="col-xs-6">
+                        <form [formGroup]="searchForm" class="input-group">
+                        <input type="text" class="form-control" formControlName="search"/>
+                        <button class="input-group-addon" type="submit">
+                            <i (click)="onClick()">Search</i>
+                        </button>
+                        </form>
+                </div>
+            </div>        
+        </div>
+</div>
+<div class="movieContainer" *ngIf="chunkmovieFLG">
+<div *ngFor="let chunk of chunkList"  class="row">
+    <div class=" col-md-4" *ngFor="let movie of chunk">
+        <div class="row movie" (click)= "movieClick(movie.id)"style="border: 1 px solid black">
+            <div class="col-md-6 col-md-4 ">
+                 <img class="widthImg" style="width:100%" [src]="movie.img"/>
+            </div>
+            <div class="col-md-6 col-md-4">
+                <div class="textItem"><b>{{movie.name}}</b></div>
+                <div class="textItem">{{movie.rate}}&nbsp;<img class="rate" [src]="rate"/> </div>
+                <div class="textItem">{{movie.length}}</div>
+                <div class="textItem">[{{movie.genres}}]</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="movieContainer" *ngIf="!chunkmovieFLG">
+        <div class=" col-md-4" *ngFor="let movie of chunkList"  class="row">
+                <div class="row movie" (click)= "onClick(movie.id)"style="border: 1 px solid black">
+                    <div class="col-md-6 col-md-4 ">
+                         <img class="widthImg" style="width:100%" [src]="movie.img"/>
+                    </div>
+                    <div class="col-md-6 col-md-4">
+                        <div class="textItem"><b>{{movie.name}}</b></div>
+                        <div class="textItem">{{movie.rate}}&nbsp;<img class="rate" [src]="rate"/> </div>
+                        <div class="textItem">{{movie.length}}</div>
+                        <div class="textItem">[{{movie.genres}}]</div>
+                    </div>
+                </div>
+        </div>
+        </div>

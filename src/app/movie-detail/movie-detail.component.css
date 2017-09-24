@@ -1,0 +1,33 @@
+
+.movieContainer{
+    background-color: white;
+    padding: 25px 21px 5px 47px;
+}
+.movie{
+    padding-bottom: 23px;
+    padding-top: 25px;
+    background-color: #f6f6f5;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.description{
+    margin-left: 21px;
+}
+@media only screen and (min-width: 600px){
+    .widthImg{
+        width: 53%;
+    }
+}
+.widthImg{
+    width: 100%;
+}
+.textItem{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: #1b1109;
+}
+.rate{
+    width: 4%;
+    margin-top: -1%;
+}

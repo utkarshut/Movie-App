@@ -1,0 +1,31 @@
+<div class="navbar navbar-inverse bg-inverse">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand">{{selectedMovie.name}}</a>
+      <div class="row">
+            <div class="col-xs-6">
+                    <button class="input-group-addon" type="submit">
+                        <i [routerLink]="['']">Back</i>
+                    </button>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<div class="movieContainer">
+    <div class="row">
+        <div class=" col-md-12" >
+            <div class="row movie"style="border: 1 px solid black">
+                <div class="col-md-6 col-md-4 ">
+                     <img class="widthImg" style="width:46%" [src]="selectedMovie.img"/>
+                </div>
+                <div class="col-md-6 col-md-4">
+                    <div class="textItem"><b>{{selectedMovie.name}}</b></div>
+                    <div class="textItem">{{selectedMovie.rate}}&nbsp;<img class="rate" [src]="rate"/> </div>
+                    <div class="textItem">{{selectedMovie.length}}</div>
+                    <div class="textItem">[{{selectedMovie.genres}}]</div>
+                    <div class="textItem">{{selectedMovie.description}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
